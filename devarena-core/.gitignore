@@ -1,0 +1,242 @@
+# ============================================
+# Build & Compiled Files
+# ============================================
+target/
+build/
+out/
+bin/
+*.class
+*.jar
+*.war
+*.ear
+
+# ============================================
+# Maven
+# ============================================
+.mvn/wrapper/maven-wrapper.jar
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# ============================================
+# Gradle
+# ============================================
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# ============================================
+# IDE - IntelliJ IDEA
+# ============================================
+.idea/
+*.iws
+*.iml
+*.ipr
+.idea_modules/
+
+# ============================================
+# IDE - Eclipse / Spring Tool Suite
+# ============================================
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+.metadata
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+
+# ============================================
+# IDE - VS Code
+# ============================================
+.vscode/
+.code-workspace
+
+# ============================================
+# IDE - NetBeans
+# ============================================
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# ============================================
+# OS Files
+# ============================================
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ============================================
+# Spring Boot
+# ============================================
+# Log files
+*.log
+logs/
+log/
+
+# Properties files với sensitive data
+application-*.properties
+application-*.yaml
+application-*.yml
+!application.yml
+!application.yaml
+
+# ============================================
+# Security - NEVER commit these!
+# ============================================
+*.jks
+*.p12
+*.pem
+*.key
+*.crt
+*.cer
+.env
+.env.*
+!.env.example
+secrets/
+keystore/
+
+# ============================================
+# DevArena Specific
+# ============================================
+# Submission files
+submissions/
+sandbox/
+sandbox-temp/
+user-code/
+test-outputs/
+
+# Test data
+testcases/
+test-data/
+!src/test/resources/testcases/
+
+# Storage folders
+data/
+uploads/
+temp/
+
+# Judge workspace
+judge-workspace/
+compilation-output/
+execution-output/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.h2.db
+
+# Docker volumes (local testing)
+docker/volumes/
+docker/data/
+postgres-data/
+redis-data/
+kafka-data/
+
+# Monitoring data
+prometheus-data/
+grafana-data/
+
+# ============================================
+# Documentation
+# ============================================
+# Generated docs
+javadoc/
+site/
+docs/_build/
+
+# ============================================
+# Testing
+# ============================================
+# Test reports
+test-results/
+test-output/
+coverage/
+.coverage
+*.coverage
+htmlcov/
+.pytest_cache/
+
+# JMeter
+*.jtl
+*.jmx.log
+
+# k6
+k6/results/
+k6/*.json
+k6/*.html
+
+# ============================================
+# Package Files
+# ============================================
+*.zip
+*.tar.gz
+*.rar
+
+# ============================================
+# Backup Files
+# ============================================
+*.backup
+*.old
+*.orig
+
+# ============================================
+# Others
+# ============================================
+# Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Gradle Wrapper
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Node (nếu có frontend)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python (nếu có scripts)
+__pycache__/
+*.pyc
+.Python
+env/
+venv/
+
+# Misc
+*.pid
+*.seed
+*.pid.lock
+.cache
