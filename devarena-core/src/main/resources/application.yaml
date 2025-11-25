@@ -1,0 +1,86 @@
+# ============================================
+# DEVARENA CORE - CONFIG CHUNG
+# ============================================
+
+spring:
+  application:
+    name: devarena-core
+
+  # Database PostgreSQL
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: DevArena-Pool
+      maximum-pool-size: 20      # Số connection tối đa
+      minimum-idle: 5             # Số connection tối thiểu
+      connection-timeout: 30000   # 30 giây timeout
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true          # Format SQL cho dễ đọc
+
+  # Redis cache
+  data:
+    redis:
+      timeout: 2000ms             # 2 giây timeout
+      lettuce:
+        pool:
+          max-active: 10          # Connection pool cho Redis
+          max-idle: 5
+          min-idle: 2
+
+  # Kafka message queue
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+    consumer:
+      group-id: devarena-core
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: earliest
+
+  # Upload file
+  servlet:
+    multipart:
+      max-file-size: 10MB         # Code file tối đa 10MB
+      max-request-size: 10MB
+
+# ============================================
+# SERVER CONFIG
+# ============================================
+server:
+  port: 8080
+  error:
+    include-message: always       # Show error message
+  compression:
+    enabled: true                  # Nén response để tăng tốc
+    mime-types: application/json,text/html,text/xml,text/plain
+
+# ============================================
+# APP CONFIG
+# ============================================
+app:
+  # API versioning
+  api:
+    version: v1
+    prefix: /api/${app.api.version}
+
+  # JWT config
+  security:
+    jwt:
+      access-token-expiry: 10      # 10 phút
+      refresh-token-expiry: 30      # 30 ngày
+
+  # Business rules
+  submission:
+    max-code-length: 100000        # 100KB code
+    max-execution-time: 10         # 10 giây chạy tối đa
+    max-memory-mb: 512             # 512MB RAM tối đa
+
+  contest:
+    freeze-time-minutes: 30        # Đóng băng bảng điểm 30 phút cuối
+    max-team-size: 5               # Team tối đa 5 người
